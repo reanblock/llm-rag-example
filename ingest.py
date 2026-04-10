@@ -1,6 +1,5 @@
 from pathlib import Path
 from openai import OpenAI
-# from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from chromadb import PersistentClient
 from tqdm import tqdm
@@ -8,8 +7,6 @@ from litellm import completion
 from multiprocessing import Pool
 from tenacity import retry, wait_exponential
 from embeddings import embedding_model
-
-# load_dotenv(override=True)
 
 MODEL = "openai/gpt-4.1-nano"
 DB_NAME = str(Path(__file__).parent / "preprocessed_db")

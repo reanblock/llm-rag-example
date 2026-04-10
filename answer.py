@@ -1,5 +1,4 @@
 from openai import OpenAI
-from dotenv import load_dotenv
 from chromadb import PersistentClient
 from litellm import completion
 from pydantic import BaseModel, Field
@@ -7,11 +6,7 @@ from pathlib import Path
 from tenacity import retry, wait_exponential, stop_after_attempt
 from embeddings import embedding_model
 
-load_dotenv(override=True)
-
-
 MODEL = "openai/gpt-4.1-nano"
-# MODEL = "openai/gpt-5-nano-2025-08-07"
 # MODEL = "groq/openai/gpt-oss-120b"
 DB_NAME = str(Path(__file__).parent / "preprocessed_db")
 KNOWLEDGE_BASE_PATH = Path(__file__).parent / "knowledge-base"
@@ -72,7 +67,7 @@ Reply only with the list of ranked chunk ids, nothing else. Include all the chun
     response = completion(model=MODEL, messages=messages, response_format=RankOrder)
     reply = response.choices[0].message.content
     order = RankOrder.model_validate_json(reply).order
-    return [chunks[i - 1] for i in order]
+    return [chunks[i - 1] for i in order if 1 <= i <= len(chunks)]
 
 
 def make_rag_messages(question, history, chunks):

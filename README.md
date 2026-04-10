@@ -21,3 +21,5 @@ uv run evaluation.py
 ```bash
 uv run main.py
 ```
+
+See [here](evaluation/tests.jsonl) for some example questions to ask!
