@@ -2,23 +2,13 @@ import os
 import glob
 from pathlib import Path
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownTextSplitter
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_openai import OpenAIEmbeddings
-
-from dotenv import load_dotenv
+from embeddings import embeddings
 
 MODEL = "gpt-4.1-nano"
-
 DB_NAME = str(Path(__file__).parent / "vector_db")
 KNOWLEDGE_BASE = str(Path(__file__).parent / "knowledge-base")
-
-# embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
-load_dotenv(override=True)
-
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 def fetch_documents():
     folders = glob.glob(str(Path(KNOWLEDGE_BASE) / "*"))
@@ -36,7 +26,8 @@ def fetch_documents():
 
 
 def create_chunks(documents):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=200)
+    # text_splitter = RecursiveCharacterTextSplitter(chunk_size=1667, chunk_overlap=200)
+    text_splitter = MarkdownTextSplitter()
     chunks = text_splitter.split_documents(documents)
     return chunks
 
