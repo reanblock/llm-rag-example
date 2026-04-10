@@ -10,13 +10,25 @@ Ingest the data and create a new local vector database.
 uv run ingest.py
 ```
 
+## Run visualization
+
+Check the the data on a 2D and 3D plot!
+
+```bash
+uv run visualize.py
+```
+
 ## Run Evaluation App
+
+Evaluate the RAG system.
 
 ```bash
 uv run evaluation.py
 ```
 
 ## Run End User App
+
+Manual testing.
 
 ```bash
 uv run main.py
