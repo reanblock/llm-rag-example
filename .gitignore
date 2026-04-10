@@ -16,5 +16,6 @@ logs
 # .env
 .env
 
-# vector_db
+# Vector databases 
 vector_db
+preprocessed_db

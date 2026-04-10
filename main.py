@@ -1,6 +1,5 @@
 import gradio as gr
 from dotenv import load_dotenv
-
 from answer import answer_question
 
 load_dotenv(override=True)
@@ -15,6 +14,8 @@ def format_context(context):
 
 def chat(history):
     last_message = history[-1]["content"]
+    if isinstance(last_message, list):
+        last_message = last_message[0]["text"]
     prior = history[:-1]
     answer, context = answer_question(last_message, prior)
     history.append({"role": "assistant", "content": answer})
