@@ -50,7 +50,7 @@ The images below are screen captures. Run this on your computer to get an intera
 
 ## Evaluation
 
-<img src='img/evaluation.png' style='width: 50%; height: auto;'>
+<img src='img/evaluation.png' style='width: 80%; height: auto;'>
 
 ## Conclusion
 
