@@ -75,11 +75,11 @@ The images below are screen captures. Run this on your computer to get an intera
 
 ### Non Hierarchical RAG Version Evaluation
 
-<img src='img/non-hierarchical-evaluation.png' style='width: 50%; height: auto;'>
+<img src='img/non-hierarchical-evaluation.png' style='width: 80%; height: auto;'>
 
 ### Hierarchical RAG Version Evaluation
 
-<img src='img/hierarchical-evaluation.png' style='width: 50%; height: auto;'>
+<img src='img/hierarchical-evaluation.png' style='width: 80%; height: auto;'>
 
 
 ## Conclusion
