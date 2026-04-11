@@ -4,7 +4,7 @@ Exercise from the LLM Engineering week 5 / day 3 project [here](https://github.c
 
 ## Run Vector DB migration
 
-Ingest the data and create a new local vector database.
+Ingest the data and create a new local vector database. Only needs to be run once (unless you change the model).
 
 ```bash
 uv run ingest.py
@@ -23,7 +23,7 @@ uv run visualize.py
 Evaluate the RAG system.
 
 ```bash
-uv run evaluation.py
+uv run evaluator.py
 ```
 
 ## Run End User App
@@ -35,3 +35,18 @@ uv run main.py
 ```
 
 See [here](evaluation/tests.jsonl) for some example questions to ask!
+
+# Results
+
+The images below are screen captures. Run this on your computer to get an interactive version to experiment with!
+
+## 2D Visualization
+
+<img src='img/2d-plot.png' style='width: 50%; height: auto;'>
+
+## 3D Visualization
+
+<img src='img/3d-plot.png' style='width: 50%; height: auto;'>
+
+## Evaluation
+
