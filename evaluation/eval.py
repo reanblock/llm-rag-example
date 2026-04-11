@@ -5,7 +5,9 @@ from litellm import completion
 from dotenv import load_dotenv
 
 from evaluation.test import TestQuestion, load_tests
-from answer import answer_question, fetch_context
+# from answer import answer_question, fetch_context
+from hierarchical_answer import answer_question_hierarchical as answer_question, \
+                                  fetch_context_hierarchical as fetch_context
 
 
 load_dotenv(override=True)

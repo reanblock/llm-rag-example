@@ -2,10 +2,20 @@ import numpy as np
 import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 from chromadb import PersistentClient
-from ingest import DB_NAME, collection_name
+# from ingest import DB_NAME, collection_name
+from hierarchical_ingest import DB_NAME, PARENT_COLLECTION, CHILD_COLLECTION
+
+# Change the 'level' variable to switch between visualizing parent or child collection
+level = "Parent"
+# level = "Child"
 
 chroma = PersistentClient(path=DB_NAME)
-collection = chroma.get_or_create_collection(collection_name)
+# collection = chroma.get_or_create_collection(collection_name)
+if level == "Parent":
+    collection = chroma.get_or_create_collection(PARENT_COLLECTION)
+else:   
+    collection = chroma.get_or_create_collection(CHILD_COLLECTION)
+# collection = chroma.get_or_create_collection(CHILD_COLLECTION)
 result = collection.get(include=['embeddings', 'documents', 'metadatas'])
 vectors = np.array(result['embeddings'])
 documents = result['documents']
@@ -26,7 +36,7 @@ fig = go.Figure(data=[go.Scatter(
 )])
 
 fig.update_layout(
-    title='2D Chroma Vector Store Visualization',
+    title=f"2D Chroma Vector Store Visualization ({level} collection)",
     scene=dict(xaxis_title='x', yaxis_title='y'),
     width=800,
     height=600,
@@ -49,7 +59,7 @@ fig = go.Figure(data=[go.Scatter3d(
 )])
 
 fig.update_layout(
-    title='3D Chroma Vector Store Visualization',
+    title=f"3D Chroma Vector Store Visualization ({level} collection)",
     scene=dict(xaxis_title='x', yaxis_title='y', zaxis_title='z'),
     width=900,
     height=700,

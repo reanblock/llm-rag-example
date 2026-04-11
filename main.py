@@ -1,8 +1,12 @@
 import gradio as gr
 from dotenv import load_dotenv
-from answer import answer_question
+# from answer import answer_question
+from hierarchical_answer import answer_question_hierarchical as answer_question
 
 load_dotenv(override=True)
+
+# import litellm
+# litellm._turn_on_debug()
 
 def format_context(context):
     result = "<h2 style='color: #ff7800;'>Relevant Context</h2>\n\n"
