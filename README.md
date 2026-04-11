@@ -50,3 +50,12 @@ The images below are screen captures. Run this on your computer to get an intera
 
 ## Evaluation
 
+<img src='img/evaluation.png' style='width: 50%; height: auto;'>
+
+## Conclusion
+
+Evaluation shows faily good results.
+
+### Hierarchical RAG Evaluation
+
+The is a separate branch that experimaents with Hierarchical RAG [here](https://github.com/reanblock/llm-rag-example/tree/introduce-hierarchical-rag).
