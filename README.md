@@ -58,4 +58,4 @@ Evaluation shows reasonable good results.
 
 ### Hierarchical RAG Evaluation
 
-The is a separate branch that experiments with Hierarchical RAG. The evaluation results can be reviewed [here](https://github.com/reanblock/llm-rag-example/tree/introduce-hierarchical-rag?tab=readme-ov-file#results).
+There is a separate branch that experiments with Hierarchical RAG. The evaluation results can be reviewed [here](https://github.com/reanblock/llm-rag-example/tree/introduce-hierarchical-rag?tab=readme-ov-file#results).
