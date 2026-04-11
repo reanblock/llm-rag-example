@@ -54,7 +54,7 @@ The images below are screen captures. Run this on your computer to get an intera
 
 ## Conclusion
 
-Evaluation shows faily good results.
+Evaluation shows reasonable good results.
 
 ### Hierarchical RAG Evaluation
 
