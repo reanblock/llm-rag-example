@@ -73,14 +73,17 @@ The images below are screen captures. Run this on your computer to get an intera
 
 ## Evaluation
 
-### Non Hierarchical RAG Version Evaluation
+### Origianal RAG Version Evaluation
+
+Results from the `main` branch (original version) for comparison: 
 
 <img src='img/non-hierarchical-evaluation.png' style='width: 80%; height: auto;'>
 
 ### Hierarchical RAG Version Evaluation
 
-<img src='img/hierarchical-evaluation.png' style='width: 80%; height: auto;'>
+Results from the current branch which uses hierarchical RAG (H-RAG) 
 
+<img src='img/hierarchical-evaluation.png' style='width: 80%; height: auto;'>
 
 ## Conclusion
 
